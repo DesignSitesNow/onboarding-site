@@ -1,1 +1,390 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Тиждень орієнтації першокурсників — КНУБА</title>
+  <meta name="description" content="Офіційна сторінка тижня орієнтації першокурсників: розклад подій, навігація кампусом, локації для відпочинку, харчування та спорту, корисні сервіси й контакти."/>
+  <style>
+    :root{
+      --bg: #0f172a;           /* slate-900 */
+      --panel: #0b1223;        /* deep slate */
+      --text: #e5e7eb;         /* gray-200 */
+      --muted: #cbd5e1;        /* slate-300 */
+      --brand: #2563eb;        /* blue-600 */
+      --brand-2: #7c3aed;      /* violet-600 */
+      --accent: #22c55e;       /* green-500 */
+      --warn: #f59e0b;         /* amber-500 */
+      --danger: #ef4444;       /* red-500 */
+      --card: #111827;         /* gray-900 */
+      --card-2:#0a0f1e;        
+      --shadow: 0 10px 30px rgba(2,6,23,.4);
+      --radius-xl: 1.25rem;
+      --radius-lg: 1rem;
+      --radius: .75rem;
+      --maxw: 1150px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Inter,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#050814 60%);color:var(--text)}
+    a{color:#93c5fd}
+    .container{max-width:var(--maxw);margin-inline:auto;padding:24px}
+    /* Header */
+    .nav{position:sticky;top:0;z-index:50;background:rgba(10,15,30,.7);backdrop-filter: blur(8px);border-bottom:1px solid rgba(148,163,184,.12)}
+    .nav-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;max-width:var(--maxw);margin:auto;padding:10px 24px}
+    .logo{display:flex;gap:12px;align-items:center;font-weight:700;letter-spacing:.3px}
+    .logo-badge{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;box-shadow:var(--shadow)}
+    .logo-badge span{font-weight:800;color:white}
+    .nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+    .nav a{display:block;padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--muted)}
+    .nav a.active,.nav a:hover{background:rgba(37,99,235,.14);color:#eaf2ff}
+    .menu-btn{display:none}
+    @media (max-width:900px){
+      .nav ul{display:none}
+      .menu-btn{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:10px;background:#0d1428;border:1px solid rgba(148,163,184,.18);color:var(--muted)}
+      .nav.open ul{display:flex;flex-direction:column;position:absolute;left:12px;right:12px;top:58px;background:#0b1223;border:1px solid rgba(148,163,184,.18);padding:8px;border-radius:12px}
+    }
+    /* Hero */
+    .hero{position:relative;overflow:hidden}
+    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(34,197,94,.1);color:#bbf7d0;border:1px solid rgba(34,197,94,.35);padding:6px 10px;border-radius:999px;font-size:13px}
+    .h1{font-size:clamp(28px,5vw,48px);line-height:1.1;margin:10px 0 14px}
+    .lead{font-size:clamp(16px,2.2vw,20px);color:#cbd5e1;margin-bottom:18px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;gap:10px;align-items:center;padding:12px 16px;border-radius:14px;border:1px solid rgba(148,163,184,.18);background:linear-gradient(135deg,#111827,#0b1223);color:#e5e7eb;text-decoration:none;box-shadow:var(--shadow)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));border:0}
+    .btn small{opacity:.85}
+    .card{background:linear-gradient(180deg,var(--card),var(--card-2));border:1px solid rgba(148,163,184,.12);border-radius:var(--radius-xl);box-shadow:var(--shadow)}
+    .hero .illus{height:100%;min-height:260px;border-radius:var(--radius-xl);position:relative;isolation:isolate}
+    .grid{display:grid;gap:16px}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+    .kpi{padding:14px;border-radius:14px;border:1px solid rgba(148,163,184,.12);background:rgba(15,23,42,.55);text-align:center}
+    .kpi .num{font-weight:800;font-size:22px}
+    @media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width:640px){.kpis{grid-template-columns:1fr 1fr}}
+    /* Sections */
+    section{scroll-margin-top:80px}
+    .section-h{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:6px 0 14px}
+    .section-h h2{margin:0;font-size:clamp(22px,3.6vw,30px)}
+    .section-h p{margin:0;color:#9ca3af}
+    /* Schedule */
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 16px}
+    .tab{background:#0a1020;border:1px solid rgba(148,163,184,.18);color:#c7d2fe;padding:8px 12px;border-radius:10px;cursor:pointer}
+    .tab.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:white;border:0}
+    .slots{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}
+    .slot{padding:14px;border-radius:14px;border:1px solid rgba(148,163,184,.12);background:rgba(17,24,39,.7);display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:start}
+    .time{font-weight:700;color:#93c5fd}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:4px 8px;border-radius:999px;font-size:12px;border:1px solid rgba(148,163,184,.18)}
+    .pill.info{background:rgba(37,99,235,.12);color:#bfdbfe}
+    .pill.sport{background:rgba(34,197,94,.12);color:#bbf7d0}
+    .pill.social{background:rgba(236,72,153,.12);color:#fbcfe8}
+    .pill.acad{background:rgba(251,191,36,.12);color:#fde68a}
+    @media (max-width:900px){.slots{grid-template-columns:1fr}.slot{grid-template-columns:100px 1fr}}
+    /* Places */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .cards .card{padding:16px}
+    .tag{display:inline-block;padding:4px 8px;border:1px solid rgba(148,163,184,.18);border-radius:999px;font-size:12px;color:#a5b4fc}
+    .list{margin:10px 0 0;padding:0;list-style:none}
+    .list li{padding:10px 0;border-top:1px dashed rgba(148,163,184,.18)}
+    .list li:first-child{border-top:0}
+    .list a{float:right}
+    @media (max-width:900px){.cards{grid-template-columns:1fr}}
+    /* Map */
+    .map-embed{position:relative;height:420px;border-radius:var(--radius-xl);overflow:hidden;border:1px solid rgba(148,163,184,.12)}
+    .map-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:hue-rotate(5deg) saturate(.8) brightness(.85)}
+    .placeholder{display:grid;place-items:center;height:100%;background:repeating-linear-gradient(45deg,#0c1224,#0c1224 10px,#0a0f1f 10px,#0a0f1f 20px);color:#9ca3af}
+    /* Services */
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .service{padding:16px;border-radius:16px;border:1px solid rgba(148,163,184,.12);background:rgba(17,24,39,.7)}
+    .service h4{margin:0 0 6px}
+    @media (max-width:900px){.service-grid{grid-template-columns:1fr}}
+    /* FAQ */
+    details{background:#0a1020;border:1px solid rgba(148,163,184,.18);border-radius:12px;padding:12px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:600}
+    /* Footer */
+    footer{border-top:1px solid rgba(148,163,184,.12);margin-top:24px}
+    .foot{display:flex;gap:16px;justify-content:space-between;align-items:center;padding:18px 0;color:#94a3b8}
+    .foot small{opacity:.8}
+    /* Utilities */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+  </style>
+</head>
+<body>
+  <header class="nav" id="top">
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-badge" aria-hidden="true"><span>К</span></div>
+        <div>
+          КНУБА <span style="opacity:.7;font-weight:600">| Онбординг</span>
+        </div>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Відкрити меню">Меню ▾</button>
+      <ul id="navList">
+        <li><a href="#schedule">Розклад</a></li>
+        <li><a href="#places">Локації</a></li>
+        <li><a href="#map">Мапа</a></li>
+        <li><a href="#services">Сервіси</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacts">Контакти</a></li>
+      </ul>
+    </div>
+  </header>
 
+  <section class="hero container">
+    <div class="wrap">
+      <div>
+        <span class="badge">Тиждень орієнтації • <strong>1–7 вересня 2025</strong></span>
+        <h1 class="h1">Ласкаво просимо до університетської спільноти!</h1>
+        <p class="lead">Тут ви знайдете розклад подій першого тижня, мапу кампусу, місця для відпочинку, харчування та спорту, а також усі корисні сервіси, щоб легко стартувати навчання.</p>
+        <div class="cta">
+          <a class="btn primary" href="#schedule">Перейти до розкладу</a>
+          <a class="btn" href="#map">Відкрити мапу кампусу</a>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><div class="num">45+</div><div>подій за тиждень</div></div>
+          <div class="kpi"><div class="num">12</div><div>локацій на кампусі</div></div>
+          <div class="kpi"><div class="num">24/7</div><div>довідка онлайн</div></div>
+        </div>
+      </div>
+      <div class="illus card">
+        <svg viewBox="0 0 600 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0%" stop-color="#2563eb"/>
+              <stop offset="100%" stop-color="#7c3aed"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="600" height="380" fill="#0a0f1e"/>
+          <g opacity="0.8">
+            <circle cx="120" cy="120" r="80" fill="url(#g1)"/>
+            <circle cx="500" cy="260" r="110" fill="url(#g1)" opacity=".6"/>
+            <circle cx="320" cy="80" r="54" fill="#22c55e" opacity=".35"/>
+            <circle cx="200" cy="300" r="40" fill="#eab308" opacity=".35"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="container">
+    <div class="section-h">
+      <h2>Розклад подій першого тижня</h2>
+      <p>Натискайте на день, щоб переглянути події. Час — EEST (Київ).</p>
+    </div>
+    <div class="tabs" id="dayTabs" role="tablist" aria-label="Дні тижня">
+      <button class="tab active" role="tab" aria-selected="true" data-day="1">Пн (01.09)</button>
+      <button class="tab" role="tab" aria-selected="false" data-day="2">Вт (02.09)</button>
+      <button class="tab" role="tab" aria-selected="false" data-day="3">Ср (03.09)</button>
+      <button class="tab" role="tab" aria-selected="false" data-day="4">Чт (04.09)</button>
+      <button class="tab" role="tab" aria-selected="false" data-day="5">Пт (05.09)</button>
+      <button class="tab" role="tab" aria-selected="false" data-day="6">Сб (06.09)</button>
+      <button class="tab" role="tab" aria-selected="false" data-day="7">Нд (07.09)</button>
+    </div>
+    <div id="slotsWrap" class="slots"></div>
+    <p style="color:#94a3b8;margin-top:10px">Порада: додайте ваші події до Google Календаря та вставте їх у цю секцію (вставка iframe). <!-- TODO: Замініть на свій embed-код Google Календаря --></p>
+  </section>
+
+  <section id="places" class="container">
+    <div class="section-h">
+      <h2>Де відпочити, поїсти й позайматися спортом</h2>
+      <p>Клікніть на посилання, щоб відкрити локацію на Google Maps.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="tag">Відпочинок</div>
+        <ul class="list">
+          <li><strong>Студентський лаунж</strong> (Корпус А, 1 пов.) <a href="#">Мапа →</a></li>
+          <li><strong>Бібліотека</strong> (читальна зала) <a href="#">Мапа →</a></li>
+          <li><strong>Коворкінг</strong> (Лаб. корпус) <a href="#">Мапа →</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tag">Харчування</div>
+        <ul class="list">
+          <li><strong>Їдальня КНУБА</strong> (Головний корпус, -1) <a href="#">Мапа →</a></li>
+          <li><strong>Кав’ярня «Арка»</strong> (біля входу) <a href="#">Мапа →</a></li>
+          <li><strong>Буфет №2</strong> (Корпус Б) <a href="#">Мапа →</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tag">Спорт</div>
+        <ul class="list">
+          <li><strong>Спорткомплекс</strong> (зал і басейн) <a href="#">Мапа →</a></li>
+          <li><strong>Вуличні тренажери</strong> (двір) <a href="#">Мапа →</a></li>
+          <li><strong>Стадіон</strong> (бігова доріжка) <a href="#">Мапа →</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="map" class="container">
+    <div class="section-h">
+      <h2>Мапа кампусу</h2>
+      <p>Натисніть на пін, щоб переглянути інформацію про локацію.</p>
+    </div>
+    <div class="map-embed card" aria-label="Вбудована мапа">
+      <!-- TODO: вставте ваш embed-код з Google My Maps або Google Maps. Приклад нижче: -->
+      <div class="placeholder">
+        <div style="text-align:center;max-width:680px;padding:18px">
+          <h3 style="margin:0 0 6px">Тут буде інтерактивна мапа кампусу</h3>
+          <p style="margin:0 0 10px">Створіть Google My Maps з точками (їдальні, лаунжі, спорт тощо) → Поділитися → Вставити карту → Скопіюйте HTML та замініть цей блок.</p>
+          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps">Відкрити Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="container">
+    <div class="section-h">
+      <h2>Корисні сервіси</h2>
+      <p>Швидкі посилання для старту навчання.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service">
+        <h4>Студентський квиток</h4>
+        <p>Інструкція з отримання, пункти видачі, статус заявки.</p>
+        <p><a href="#">Перейти →</a></p>
+      </div>
+      <div class="service">
+        <h4>Електронні сервіси</h4>
+        <p>LMS (Aula / Moodle), Office 365 / Teams, корпоративна пошта.</p>
+        <p><a href="#">Перейти →</a></p>
+      </div>
+      <div class="service">
+        <h4>Підтримка 24/7</h4>
+        <p>Телеграм-бот, служба безпеки, медпункт, психологічна допомога.</p>
+        <p><a href="#">Перейти →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="container">
+    <div class="section-h"><h2>Часті запитання</h2><p>Важливі відповіді для швидкого старту.</p></div>
+    <details>
+      <summary>Як знайти свій розклад групи?</summary>
+      <p>Посилання на розклад за факультетами та групами буде опубліковано в розділі «Електронні сервіси». Також запитаєте у куратора групи.</p>
+    </details>
+    <details>
+      <summary>Де оформити студентський квиток?</summary>
+      <p>Пункти видачі та графік роботи — у розділі «Студентський квиток». Обовʼязково візьміть паспорт і фотографію встановленого формату.</p>
+    </details>
+    <details>
+      <summary>Чи є доступ до Wi‑Fi?</summary>
+      <p>Так, гостьова мережа та мережа для студентів. Дані доступу — у деканаті або через особистий кабінет.</p>
+    </details>
+  </section>
+
+  <section id="contacts" class="container">
+    <div class="section-h"><h2>Контакти та невідкладна допомога</h2><p>Тримайте ці номери під рукою.</p></div>
+    <div class="cards">
+      <div class="card"><div style="padding:16px">
+        <h4 style="margin-top:0">Деканат факультету</h4>
+        <p><strong>Тел.:</strong> +380 (44) 000‑00‑00<br/><strong>Email:</strong> dean@example.edu.ua</p>
+      </div></div>
+      <div class="card"><div style="padding:16px">
+        <h4 style="margin-top:0">Куратор першого курсу</h4>
+        <p><strong>Тел.:</strong> +380 (67) 000‑00‑00<br/><strong>Telegram:</strong> @knuba_onboarding</p>
+      </div></div>
+      <div class="card"><div style="padding:16px">
+        <h4 style="margin-top:0">Надзвичайна допомога</h4>
+        <p><strong>Охорона кампусу:</strong> 103<br/><strong>Держ. служби:</strong> 101 / 102 / 103</p>
+      </div></div>
+    </div>
+  </section>
+
+  <footer class="container">
+    <div class="foot">
+      <small>© 2025 КНУБА · Тиждень орієнтації першокурсників</small>
+      <a class="btn" href="#top" aria-label="Повернутися нагору">Нагору ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const nav = document.querySelector('.nav');
+    document.getElementById('menuBtn')?.addEventListener('click', ()=>{
+      nav.classList.toggle('open');
+    });
+
+    // Tabs logic & sample data
+    const schedule = {
+      1:[
+        {time:'09:00', title:'Урочисте відкриття та вітальна кава', place:'Актова зала, Головний корпус', type:'social'},
+        {time:'11:00', title:'Зустріч з деканом та кураторами', place:'Ауд. 201, корпус А', type:'info'},
+        {time:'14:00', title:'Екскурсія кампусом', place:'Старт: головний вхід', type:'info'}
+      ],
+      2:[
+        {time:'10:00', title:'Орієнтація в електронних сервісах (Aula/Teams)', place:'Компʼютерний клас, корпус Б', type:'acad'},
+        {time:'13:00', title:'Обід із наставниками', place:'Їдальня КНУБА', type:'social'},
+        {time:'16:30', title:'Спортивний нетворкінг', place:'Стадіон', type:'sport'}
+      ],
+      3:[
+        {time:'09:30', title:'Безпека на кампусі та психологічна підтримка', place:'Ауд. 105, корпус А', type:'info'},
+        {time:'12:00', title:'Бібліотека: як користуватися ресурсами', place:'Читальна зала', type:'acad'},
+        {time:'17:30', title:'Вечір знайомств клубів і студентських організацій', place:'Хол, корпус А', type:'social'}
+      ],
+      4:[
+        {time:'10:00', title:'Лекція: Академічна доброчесність', place:'Ауд. 301, корпус Б', type:'acad'},
+        {time:'15:00', title:'Майстер‑клас: Навички ефективного навчання', place:'Ауд. 204, корпус А', type:'acad'}
+      ],
+      5:[
+        {time:'11:00', title:'Зустріч з карʼєрним центром', place:'Карʼєрний центр', type:'info'},
+        {time:'18:00', title:'Кіно‑вечір', place:'Актова зала', type:'social'}
+      ],
+      6:[
+        {time:'10:00', title:'Екскурсія містом для першокурсників', place:'Збір біля головного входу', type:'social'},
+        {time:'16:00', title:'Турнір з настільного тенісу', place:'Спорткомплекс', type:'sport'}
+      ],
+      7:[
+        {time:'12:00', title:'Недільний брънч зі студентською радою', place:'Кафе «Арка»', type:'social'}
+      ]
+    };
+
+    function pillClass(t){
+      return {info:'pill info', sport:'pill sport', social:'pill social', acad:'pill acad'}[t]||'pill';
+    }
+
+    const slotsWrap = document.getElementById('slotsWrap');
+    function render(day){
+      const items = schedule[day]||[];
+      slotsWrap.innerHTML = items.map(i=>`
+        <div class="slot">
+          <div class="time">${i.time}</div>
+          <div>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:space-between">
+              <strong>${i.title}</strong>
+              <span class="${pillClass(i.type)}">${({info:'Інфо',sport:'Спорт',social:'Нетворкінг',acad:'Академ.'}[i.type]||'Подія')}</span>
+            </div>
+            <div style="color:#9ca3af">${i.place}</div>
+          </div>
+        </div>`).join('');
+    }
+    render(1);
+
+    // Tabs events
+    document.getElementById('dayTabs').addEventListener('click', (e)=>{
+      const btn = e.target.closest('.tab');
+      if(!btn) return;
+      document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.day);
+    });
+
+    // Active link on scroll
+    const links = [...document.querySelectorAll('.nav a')];
+    const sections = links.map(l=>document.querySelector(l.getAttribute('href'))).filter(Boolean);
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{
+        const id = '#' + e.target.id;
+        const link = links.find(l=>l.getAttribute('href')===id);
+        if(e.isIntersecting){
+          links.forEach(a=>a.classList.remove('active'));
+          link?.classList.add('active');
+        }
+      })
+    },{rootMargin:'-60% 0px -35% 0px', threshold:[0,1]});
+    sections.forEach(s=>obs.observe(s));
+  </script>
+</body>
+</html>
