@@ -11,9 +11,9 @@
       --panel: #0b1223;        /* deep slate */
       --text: #e5e7eb;         /* gray-200 */
       --muted: #cbd5e1;        /* slate-300 */
-      --brand: #2563eb;        /* blue-600 */
-      --brand-2: #7c3aed;      /* violet-600 */
-      --accent: #22c55e;       /* green-500 */
+      --brand: #e4b04d;        /* blue-600 */
+      --brand-2: #e4b04d;      /* violet-600 */
+      --accent: #e4b04d;       /* green-500 */
       --warn: #f59e0b;         /* amber-500 */
       --danger: #ef4444;       /* red-500 */
       --card: #111827;         /* gray-900 */
@@ -27,7 +27,7 @@
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Inter,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#050814 60%);color:var(--text)}
-    a{color:#93c5fd}
+  a{color:#e4b04d}
     .container{max-width:var(--maxw);margin-inline:auto;padding:24px}
     /* Header */
     .nav{position:sticky;top:0;z-index:50;background:rgba(10,15,30,.7);backdrop-filter: blur(8px);border-bottom:1px solid rgba(148,163,184,.12)}
@@ -81,9 +81,18 @@
     .pill.acad{background:rgba(251,191,36,.12);color:#fde68a}
     @media (max-width:900px){.slots{grid-template-columns:1fr}.slot{grid-template-columns:100px 1fr}}
     /* Places */
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:16px}
     .cards .card{padding:16px}
-    .tag{display:inline-block;padding:4px 8px;border:1px solid rgba(148,163,184,.18);border-radius:999px;font-size:12px;color:#a5b4fc}
+    .tag{
+      display:inline-block;
+      padding:8px 16px;
+      border:2px solid #e4b04d;
+      border-radius:999px;
+      font-size:18px;
+      color:#e4b04d;
+      font-weight:700;
+      background:rgba(228,176,77,0.08);
+    }
     .list{margin:10px 0 0;padding:0;list-style:none}
     .list li{padding:10px 0;border-top:1px dashed rgba(148,163,184,.18)}
     .list li:first-child{border-top:0}
@@ -114,6 +123,7 @@
   <header class="nav" id="top">
     <div class="nav-inner">
       <div class="logo">
+        <img src="logo.png" alt="Логотип КНУБА" style="height:36px;width:auto;border-radius:8px;margin-right:8px;">
         <div class="logo-badge" aria-hidden="true"><span>К</span></div>
         <div>
           КНУБА <span style="opacity:.7;font-weight:600">| Онбординг</span>
@@ -180,27 +190,38 @@
       <div class="card">
         <div class="tag">Відпочинок</div>
         <ul class="list">
-          <li><strong>Студентський лаунж</strong> (Корпус А, 1 пов.) <a href="#">Мапа →</a></li>
-          <li><strong>Бібліотека</strong> (читальна зала) <a href="#">Мапа →</a></li>
-          <li><strong>Коворкінг</strong> (Лаб. корпус) <a href="#">Мапа →</a></li>
+          <li><strong>Центральна площа</strong> (Перед головним корпусом) a <href="https://www.google.com/maps/search/?api=1&query=50.427703,30.465980" target="_blank" rel="noopener">Мапа →</a></li>
+          <li><strong>Читальна зала головного корпусу</strong> (лаунж зона, 3 поверх головного корпусу) <a href="https://www.google.com/maps/search/?api=1&query=50.42675679046541,30.46529884832752" target="_blank" rel="noopener">Мапа →</a></li>
+          <li><strong>Читальна зала архітектурного корпусу</strong> (лаунж зона, 3 поверх архітектурного корпусу) <a href="https://www.google.com/maps/search/?api=1&query=50.4273138361102,30.46823318497214" target="_blank" rel="noopener">Мапа →</a></li>
+          <li><strong>Парк імені Миколи Зерова</strong> (біля Солом'янської площі) <a href="https://www.google.com/maps/search/?api=1&query=50.4265,30.46678" target="_blank" rel="noopener">Мапа →</a></li>
+          <li><strong>Алея будівельників</strong> (Вздовж вулиці Освіти) <a href="https://www.google.com/maps/search/?api=1&query=50.429832420885106,30.468158083145017" target="_blank" rel="noopener">Мапа →</a></li>
+          <li><strong>Міні сквер</strong> (Біля заправки КЛО) <a href="https://www.google.com/maps/search/?api=1&query=50.428722,30.466812" target="_blank" rel="noopener">Мапа →</a></li>
         </ul>
       </div>
       <div class="card">
         <div class="tag">Харчування</div>
         <ul class="list">
-          <li><strong>Їдальня КНУБА</strong> (Лабораторний корпус, 1 поверх) <a href="#">Мапа →</a></li>
-          <li><strong>Студентське кафе</strong> (Лабораторний корпус, вхід з вулиці) <a href="#">Мапа →</a></li>
-          <li><strong>Буфет №1</strong> (Центральний корпус, Зимовий сад) <a href="#">Мапа →</a></li>
-          <li><strong>Буфет №2</strong> (Архітектурний корпус, -0,5 поверх) <a href="#">Мапа →</a></li>
+          <li><strong>Їдальня КНУБА</strong> (Лабораторний корпус, 1 поверх) <a href="https://www.google.com/maps/search/?api=1&query=50.4265,30.46678" target="_blank" rel="noopener">Мапа →</a></li>
+          <li><strong>Студентське кафе</strong> (Лабораторний корпус, вхід з вулиці) <a href="https://www.google.com/maps/search/?api=1&query=50.42649,30.46689" target="_blank" rel="noopener">Мапа →</a></li>
+          <li><strong>Буфет №1</strong> (Центральний корпус, Зимовий сад) <a href="https://www.google.com/maps/search/?api=1&query=50.42737,30.46608" target="_blank" rel="noopener">Мапа →</a></li>
+          <li><strong>Буфет №2</strong> (Архітектурний корпус, -0,5 поверх) <a href="https://www.google.com/maps/search/?api=1&query=50.42705,30.46797" target="_blank" rel="noopener">Мапа →</a></li>
         </ul>
       </div>
       <div class="card">
         <div class="tag">Спорт</div>
         <ul class="list">
-          <li><strong>Спорткомплекс КНУБА</strong> (зал і басейн) <a href="#">Мапа →</a></li>
+          <li><strong>Спорткомплекс КНУБА</strong> (зал і басейн)  <a href="https://www.google.com/maps/search/?api=1&query=50.42596,30.4676" target="_blank" rel="noopener">Мапа →</a></li>
           <li><strong>Вуличні тренажери</strong> (двір) <a href="#">Мапа →</a></li>
-          <li><strong>Стадіон</strong> (бігова доріжка) <a href="#">Мапа →</a></li>
-          <li><strong>Площадка для падела</strong> (мячі в спорткомплексі) <a href="#">Мапа →</a></li>
+          <li><strong>Стадіон</strong> (бігова доріжка)  <a href="https://www.google.com/maps/search/?api=1&query=50.42546,30.46838" target="_blank" rel="noopener">Мапа →</a></li>
+          <li><strong>Корти для гри у падбол</strong> (біля геодезичного корпусу)  <a href="https://www.google.com/maps/search/?api=1&query=50.42524,30.4692" target="_blank" rel="noopener">Мапа →</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tag">Додатково</div>
+        <ul class="list">
+          <li><strong>Кабінет сімейного лікаря</strong> (вул. Освіти, 7, Гуртожиток № 5, 1 поверх у холі) Координатор лікарів: Кущ Олена Михайлівна, тел. +38(067)5825853 <a href="https://www.google.com/maps/search/?api=1&query=50.42144,30.46834" target="_blank" rel="noopener">Мапа →</a></li>
+          <li><strong>Друк та фото</strong> (Вхід на територію) <a href="#">Мапа →</a></l>
+          <li><strong>Пункт психологічної допомоги</strong> (Головний корпус, 2 поверх) <a href="#">Мапа →</a></li>
         </ul>
       </div>
     </div>
@@ -251,7 +272,11 @@
     <div class="section-h"><h2>Часті запитання</h2><p>Важливі відповіді для швидкого старту.</p></div>
     <details>
       <summary>Як знайти свій розклад групи?</summary>
-      <p>Посилання на розклад за факультетами та групами буде опубліковано в розділі «Електронні сервіси». Також запитаєте у куратора групи.</p>
+      <p>Посилання на розклад за факультетами та групами розміщено на сайті <a href="https://mkr.knuba.edu.ua/" target="_blank" rel="noopener">Розклад →</a></p>
+      <p>Натисність Розклад  → Акад.групи → Оберіть факультет → 1 курс → Групу </p>
+      <img src="mkr.png" alt="Логотип КНУБА" style="height:720px;width:auto;border-radius:8px;margin-right:8px;">
+      <p>В мобільній версії не забудьте натиснити на "СТОПОЧКУ" (...так, дуже складно)</p>
+      <img src="mkrmob.png" alt="Логотип КНУБА" style="height:480px;width:auto;border-radius:8px;margin-right:8px;">
     </details>
     <details>
       <summary>Де оформити студентський квиток?</summary>
@@ -264,20 +289,85 @@
   </section>
 
   <section id="contacts" class="container">
-    <div class="section-h"><h2>Контакти та невідкладна допомога</h2><p>Тримайте ці номери під рукою.</p></div>
+  <div class="section-h"><h2>Контакти та невідкладна допомога</h2><p>Тримайте ці контакти під рукою.</p></div>
     <div class="cards">
-      <div class="card"><div style="padding:16px">
-        <h4 style="margin-top:0">Деканат факультету</h4>
-        <p><strong>Тел.:</strong> +380 (44) 000‑00‑00<br/><strong>Email:</strong> dean@example.edu.ua</p>
-      </div></div>
-      <div class="card"><div style="padding:16px">
-        <h4 style="margin-top:0">Куратор першого курсу</h4>
-        <p><strong>Тел.:</strong> +380 (67) 000‑00‑00<br/><strong>Telegram:</strong> @knuba_onboarding</p>
-      </div></div>
-      <div class="card"><div style="padding:16px">
-        <h4 style="margin-top:0">Надзвичайна допомога</h4>
-        <p><strong>Охорона кампусу:</strong> 103<br/><strong>Держ. служби:</strong> 101 / 102 / 103</p>
-      </div></div>
+        <div class="faculty-section">
+          <h3>Архітектурний факультет</h3>
+          <div class="card"><div style="padding:16px">
+            <h4>Контакт 1</h4>
+            <p><strong>Тел.:</strong> +380 (44) ХХХ‑ХХ‑ХХ<br/><strong>Email:</strong> arch1@example.edu.ua</p>
+          </div></div>
+          <div class="card"><div style="padding:16px">
+            <h4>Контакт 2</h4>
+            <p><strong>Тел.:</strong> +380 (44) ХХХ‑ХХ‑ХХ<br/><strong>Email:</strong> arch2@example.edu.ua</p>
+          </div></div>
+        </div>
+        <div class="faculty-section">
+          <h3>Будівельний факультет</h3>
+          <div class="card"><div style="padding:16px">
+            <h4>Контакт 1</h4>
+            <p><strong>Тел.:</strong> +380 (44) ХХХ‑ХХ‑ХХ<br/><strong>Email:</strong> build1@example.edu.ua</p>
+          </div></div>
+          <div class="card"><div style="padding:16px">
+            <h4>Контакт 2</h4>
+            <p><strong>Тел.:</strong> +380 (44) ХХХ‑ХХ‑ХХ<br/><strong>Email:</strong> build2@example.edu.ua</p>
+          </div></div>
+        </div>
+        <div class="faculty-section">
+          <h3>Факультет урбаністики та просторового планування</h3>
+          <div class="card"><div style="padding:16px">
+            <h4>Контакт 1</h4>
+            <p><strong>Канал ТГ:</strong> https://t.me/+4hPyFzbbDv1lMDhi<br/><strong>Тел.:</strong> +380 (44) 248-30-32<br/><strong>Email:</strong> fupp@knuba.edu.ua</p>
+          </div></div>
+          <div class="card"><div style="padding:16px">
+            <h4>Контакт 2</h4>
+            <p><strong>Тел.:</strong> +380 (44) ХХХ‑ХХ‑ХХ<br/><strong>Email:</strong> urban2@example.edu.ua</p>
+          </div></div>
+        </div>
+        <div class="faculty-section">
+          <h3>Факультет інженерних систем та екології</h3>
+          <div class="card"><div style="padding:16px">
+            <h4>Контакт 1</h4>
+            <p><strong>Тел.:</strong> +380 (44) ХХХ‑ХХ‑ХХ<br/><strong>Email:</strong> eco1@example.edu.ua</p>
+          </div></div>
+        </div>
+        <div class="faculty-section">
+          <h3>Будівельно-технологічний факультет</h3>
+          <div class="card"><div style="padding:16px">
+            <h4>Контакт 1</h4>
+            <p><strong>Тел.:</strong> +380 (44) ХХХ‑ХХ‑ХХ<br/><strong>Email:</strong> tech1@example.edu.ua</p>
+          </div></div>
+          <div class="card"><div style="padding:16px">
+            <h4>Контакт 2</h4>
+            <p><strong>Тел.:</strong> +380 (44) ХХХ‑ХХ‑ХХ<br/><strong>Email:</strong> tech2@example.edu.ua</p>
+          </div></div>
+        </div>
+        <div class="faculty-section">
+          <h3>Факультет автоматизації та інформаційних технологій</h3>
+          <div class="card"><div style="padding:16px">
+            <h4>Контакт 1</h4>
+            <p><strong>Тел.:</strong> +380 (44) ХХХ‑ХХ‑ХХ<br/><strong>Email:</strong> ait1@example.edu.ua</p>
+          </div></div>
+          <div class="card"><div style="padding:16px">
+            <h4>Контакт 2</h4>
+            <p><strong>Тел.:</strong> +380 (44) ХХХ‑ХХ‑ХХ<br/><strong>Email:</strong> ait2@example.edu.ua</p>
+          </div></div>
+        </div>
+        <div class="faculty-section">
+          <h3>Факультет геоінформаційних систем та управління територіями</h3>
+          <div class="card"><div style="padding:16px">
+            <h4>Контакт 1</h4>
+            <p><strong>Тел.:</strong> +380 (44) ХХХ‑ХХ‑ХХ<br/><strong>Email:</strong> geo1@example.edu.ua</p>
+          </div></div>
+          <div class="card"><div style="padding:16px">
+            <h4>Контакт 2</h4>
+            <p><strong>Тел.:</strong> +380 (44) ХХХ‑ХХ‑ХХ<br/><strong>Email:</strong> geo2@example.edu.ua</p>
+          </div></div>
+        </div>
+        <div class="card"><div style="padding:16px">
+          <h4>Надзвичайна допомога</h4>
+          <p><strong>Охорона кампусу:</strong> 103<br/><strong>Держ. служби:</strong> 101 / 102 / 103</p>
+        </div></div>
     </div>
   </section>
 
