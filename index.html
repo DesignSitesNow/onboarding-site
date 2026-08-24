@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Тиждень орієнтації першокурсників — КНУБА</title>
-  <meta name="description" content="Офіційна сторінка тижня орієнтації першокурсників: розклад подій, навігація кампусом, локації для відпочинку, харчування та спорту, корисні сервіси й контакти."/>
+  <title>Урочисте привітання першокурсників та тиждень онбордингу 2026 — КНУБА</title>
+  <meta name="description" content="Офіційна сторінка онбордингу першокурсників КНУБА 2026: програма Дня першокурсника 31 серпня та тижня онбордингу 1–3 вересня, правила безпеки, мапа кампусу, цифрові сервіси й контакти."/>
+  <meta property="og:title" content="Онбординг першокурсників КНУБА 2026"/>
+  <meta property="og:description" content="31 серпня — 3 вересня 2026. Програма, локації, сервіси та контакти для першокурсників КНУБА."/>
+  <meta property="og:image" content="knuba-campus1.jpg"/>
+  <meta property="og:type" content="website"/>
+  <link rel="icon" href="logo.png"/>
   <style>
     :root{
       --bg: #0f172a;           /* slate-900 */
@@ -116,23 +121,36 @@
     .foot{display:flex;gap:16px;justify-content:space-between;align-items:center;padding:18px 0;color:#94a3b8}
     .foot small{opacity:.8}
     /* Utilities */
+    .pill.safety{background:rgba(239,68,68,.14);color:#fecaca;border-color:rgba(239,68,68,.35)}
+    /* Вкладені пункти програми в події розкладу */
+    .mini{margin:10px 0 0;padding:0 0 0 18px;color:#cbd5e1;font-size:14.5px;line-height:1.55}
+    .mini li{padding:3px 0}
+    /* Блок безпеки */
+    .notice{padding:16px;border-color:rgba(239,68,68,.28);background:linear-gradient(180deg,rgba(239,68,68,.06),var(--card-2))}
+    .notice .list li{border-top-color:rgba(239,68,68,.18)}
+    /* Контакти */
+    .faculty-section{display:flex;flex-direction:column;gap:10px}
+    .faculty-section .tag h4{margin:0;font-size:16px}
+    .faculty-section .card h4{margin:0 0 6px}
+    /* Utilities */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
   </style>
 </head>
 <body id="top">
-  <header class="nav" id="top">
+  <header class="nav" id="topnav">
     <div class="nav-inner">
       <div class="logo">
           <a href="https://www.knuba.edu.ua" target="_blank" rel="noopener">
             <img src="logo.png" alt="Логотип КНУБА" style="height:36px;width:auto;border-radius:8px;margin-right:8px;">
           </a>
         <div>
-          КНУБА <span style="opacity:.7;font-weight:600">| Онбординг</span>
+          КНУБА <span style="opacity:.7;font-weight:600">| Онбординг 2026</span>
         </div>
       </div>
       <button class="menu-btn" id="menuBtn" aria-label="Відкрити меню">Меню ▾</button>
       <ul id="navList">
         <li><a href="#schedule">Розклад</a></li>
+        <li><a href="#safety">Безпека</a></li>
         <li><a href="#places">Локації</a></li>
         <li><a href="#map">Мапа</a></li>
         <li><a href="#services">Сервіси</a></li>
@@ -145,16 +163,16 @@
   <section class="hero container">
     <div class="wrap">
       <div>
-        <span class="badge">Тиждень орієнтації • <strong>1–5 вересня 2025</strong></span>
+        <span class="badge">Урочисте привітання та тиждень онбордингу • <strong>31 серпня — 3 вересня 2026</strong></span>
         <h1 class="h1">Ласкаво просимо до університетської спільноти КНУБА!</h1>
-        <p class="lead">Тут ви знайдете події першого тижня для першокурсників, мапу кампусу, місця для відпочинку, харчування та спорту, а також усі корисні сервіси, щоб легко стартувати навчання.</p>
+        <p class="lead">Тут — програма Дня першокурсника та тижня онбордингу, мапа кампусу, локації для відпочинку, харчування і спорту, цифрові сервіси та контакти, щоб ваш старт у КНУБА був спокійним і зрозумілим.</p>
         <div class="cta">
           <a class="btn primary" href="#schedule">Перейти до розкладу</a>
           <a class="btn" href="#map">Відкрити мапу кампусу</a>
         </div>
         <div class="kpis">
-          <div class="kpi"><div class="num">7+</div><div>подій за тиждень</div></div>
-          <div class="kpi"><div class="num">20+</div><div>локацій на кампусі</div></div>
+          <div class="kpi"><div class="num">4</div><div>дні програми</div></div>
+          <div class="kpi"><div class="num">9</div><div>підрозділів</div></div>
           <div class="kpi"><div class="num">24/7</div><div>❤️</div></div>
         </div>
       </div>
@@ -166,20 +184,33 @@
 
   <section id="schedule" class="container">
     <div class="section-h">
-      <h2>Розклад подій першого тижня для першокурсників</h2>
+      <h2>Програма Дня першокурсника та тижня онбордингу</h2>
       <p>Натискайте на день, щоб переглянути події. Час — EEST (Київ).</p>
     </div>
-    <div class="tabs" id="dayTabs" role="tablist" aria-label="Дні тижня">
-      <button class="tab active" role="tab" aria-selected="true" data-day="1">Пн (01.09)</button>
-      <button class="tab" role="tab" aria-selected="false" data-day="2">Вт (02.09)</button>
-      <button class="tab" role="tab" aria-selected="false" data-day="3">Ср (03.09)</button>
-      <button class="tab" role="tab" aria-selected="false" data-day="4">Чт (04.09)</button>
-      <button class="tab" role="tab" aria-selected="false" data-day="5">Пт (05.09)</button>
-      <button class="tab" role="tab" aria-selected="false" data-day="6">Сб (06.09)</button>
-      <button class="tab" role="tab" aria-selected="false" data-day="7">Нд (07.09)</button>
+    <div class="tabs" id="dayTabs" role="tablist" aria-label="Дні програми">
+      <button class="tab active" role="tab" aria-selected="true" data-day="1">Пн (31.08)</button>
+      <button class="tab" role="tab" aria-selected="false" data-day="2">Вт (01.09)</button>
+      <button class="tab" role="tab" aria-selected="false" data-day="3">Ср (02.09)</button>
+      <button class="tab" role="tab" aria-selected="false" data-day="4">Чт (03.09)</button>
     </div>
     <div id="slotsWrap" class="slots"></div>
-    <p style="color:#94a3b8;margin-top:10px"></p>
+    <p style="color:#94a3b8;margin-top:10px">Програма може бути скорочена або перенесена за рішенням координатора безпеки заходів. Слідкуйте за оголошеннями у чатах груп та на офіційних каналах університету.</p>
+  </section>
+
+  <section id="safety" class="container">
+    <div class="section-h">
+      <h2>Безпека під час заходів</h2>
+      <p>Прочитайте це до того, як прийдете на захід.</p>
+    </div>
+    <div class="notice card">
+      <ul class="list">
+        <li><strong>Безпековий брифінг</strong> проводиться на початку кожного заходу. На ньому вам покажуть найближче укриття та назвуть, за ким рухатися при тривозі.</li>
+        <li><strong>Під час повітряної тривоги</strong> захід призупиняється. Рухайтеся організовано за своїм куратором або волонтером-навігатором до вказаної захисної споруди. Не залишайте потік самостійно.</li>
+        <li><strong>Медичний працівник</strong> з аптечкою чергує на всіх масових заходах. Якщо вам стало погано — зверніться до найближчого волонтера або куратора.</li>
+        <li><strong>Рішення про скорочення, призупинення, перенесення заходу чи зміну локації</strong> ухвалює відповідальний за безпеку. Такі рішення обов'язкові для всіх учасників.</li>
+        <li><strong>Резервна локація</strong> для урочистого привітання 31 серпня — Актова зала. Про зміну локації повідомлять завчасно на офіційних каналах.</li>
+      </ul>
+    </div>
   </section>
 
   <section id="places" class="container">
@@ -217,13 +248,16 @@
         </ul>
       </div>
       <div class="card">
-        <div class="tag">Додатково</div>
+        <div class="tag">Хаби, лабораторії та інше</div>
         <ul class="list">
-          <li><strong>Кабінет сімейного лікаря</strong> (вул. Освіти, 7, Гуртожиток № 5, 1 поверх у холі) Лікар: Тутова Єлізавета Василівна, тел. +38(050)2272492 Графік роботи: Вт, Чт - 16.30-21.00, Сб 9.00-16.00 <a href="https://www.google.com/maps/search/?api=1&query=50.42408,30.46928" target="_blank" rel="noopener">Мапа →</a></li>
+          <li><strong>КНУБА Hub</strong> (у підвалі будівлі гуртожитку №6) <a href="https://www.google.com/maps/search/?api=1&query=50.42416,30.46998" target="_blank" rel="noopener">Мапа →</a></li>
+          <li><strong>Платформа «Острів»</strong> (вул. Волинська 9/21, будівля гуртожитку №3) <a href="https://www.google.com/maps/search/?api=1&query=50.43043,30.4515" target="_blank" rel="noopener">Мапа →</a></li>
+          <!-- TODO 2026: додати координати PROTOLAB, ROBOLAB та Automation Hub, коли їх нададуть керівники лабораторій -->
+          <li><strong>PROTOLAB</strong> (локація уточнюється)</li>
+          <li><strong>ROBOLAB</strong> (локація уточнюється)</li>
+          <li><strong>Кабінет сімейного лікаря</strong> (вул. Освіти, 7, Гуртожиток № 5, 1 поверх у холі). Лікар: Тутова Єлізавета Василівна, тел. +38 (050) 227-24-92. Графік: Вт, Чт — 16:30–21:00, Сб — 9:00–16:00 <a href="https://www.google.com/maps/search/?api=1&query=50.42408,30.46928" target="_blank" rel="noopener">Мапа →</a></li>
           <li><strong>Копіцентр головного корпусу</strong> (біля кабінету 130, праворуч від головного входу) <a href="https://www.google.com/maps/search/?api=1&query=50.42732,30.46603" target="_blank" rel="noopener">Мапа →</a></li>
           <li><strong>Копіцентр архітектурного корпусу</strong> (3 поверх архітектурного корпусу) <a href="https://www.google.com/maps/search/?api=1&query=50.4271,30.46823" target="_blank" rel="noopener">Мапа →</a></li>
-          <li><strong>КНУБА ХАБ</strong> В підвалі будівлі гуртожитку №6 <a href="https://www.google.com/maps/search/?api=1&query=50.42416,30.46998" target="_blank" rel="noopener">Мапа →</a></li>
-          <li><strong>Платформа "ОСТРІВ"</strong> вул. Волинська 9/21, будівля гуртожитку №3 <a href="https://www.google.com/maps/search/?api=1&query=50.43043,30.4515" target="_blank" rel="noopener">Мапа →</a></li>
         </ul>
       </div>
     </div>
@@ -238,7 +272,7 @@
       <div class="placeholder">
         <div style="text-align:center;max-width:680px;padding:18px">
           <h3 style="margin:0 0 6px">Мапа кампусу КНУБА</h3>
-          <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1IrU7wK4a2lSYcIcmGziHJfMO2mmuLDQ&ehbc=2E312F" width="640" height="480"></iframe>
+          <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1IrU7wK4a2lSYcIcmGziHJfMO2mmuLDQ&ehbc=2E312F" width="640" height="480" title="Мапа кампусу КНУБА"></iframe>
           <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/d/u/1/edit?mid=1IrU7wK4a2lSYcIcmGziHJfMO2mmuLDQ&usp=sharing">Відкрити Google Maps</a>
         </div>
       </div>
@@ -251,55 +285,134 @@
       <p>Швидкі посилання для старту навчання.</p>
     </div>
     <div class="service-grid">
+
+      <div class="service">
+        <div class="tag"><h4>Цифрові сервіси КНУБА</h4></div>
+        <p style="margin-top:12px">Облікові записи першокурсників створює Центр інформаційних технологій до 26 серпня 2026 року. Логін і пароль ви отримаєте у своєму деканаті або від куратора.</p>
+        <ul class="list">
+          <li>Освітній сайт КНУБА, LMS Moodle <a href="https://org2.knuba.edu.ua/" target="_blank" rel="noopener">Перейти →</a></li>
+          <li>Office 365, Microsoft Teams, корпоративна пошта <a href="https://www.office.com/login" target="_blank" rel="noopener">Перейти →</a></li>
+          <li>Розклад занять <a href="https://mkr.knuba.edu.ua/" target="_blank" rel="noopener">Перейти →</a></li>
+          <li>Офіційний сайт університету <a href="https://www.knuba.edu.ua" target="_blank" rel="noopener">Перейти →</a></li>
+          <li>Wi-Fi на кампусі: мережа <strong>KNUBA_FREE_WIFI</strong></li>
+        </ul>
+        <p style="color:#9ca3af;margin-top:10px">Детальна демонстрація всіх сервісів — 1 вересня в актовій залі.</p>
+      </div>
+
+      <!--
+        TODO 2026: банк-партнер на 2026 рік у розпорядженні не визначений.
+        Коли буде відомо — підставте назву банку, логотип, PDF з умовами,
+        точні дати й локацію роботи операторів. Нижче — тимчасовий текст.
+        Торішні файли SenseBank.pdf, Privat1.pdf, Privat2.pdf лишаються в репозиторії.
+      -->
       <div class="service">
         <div class="tag"><h4>Картка для виплати стипендії</h4></div>
-        <p>Які банки партнерять з КНУБА, Умови отримання та користування.</p></br>
-        <img src="sense-bank-seeklogo.png" alt="Логотип СБ" style="height:20px;width:auto;border-radius:8px;margin-right:8px;">
-          Картка від Sense Bank <span style="opacity:.7;font-weight:600"></br>| Майбутнє має сенс</span>
-          <a href="SenseBank.pdf" target="_blank" rel="noopener"
-       style="display:inline-block;margin-top:8px;color:#93c5fd;text-decoration:underline;">Переглянути умови картки (PDF)</a><br>
-       ✅Оператори Sense bank<br> 
-з 04.09-12.09<br>
-🕒 9:00-17:00<br>
-Зимовий сад головного корпусу (1 поверх) <a href="https://www.google.com/maps/search/?api=1&query=50.42729497619371,30.466255742163554" target="_blank" rel="noopener">Мапа →</a><br><br>
-        <img src="logo_PrivatBank.png" alt="Логотип ПБ" style="height:38px;width:auto;border-radius:8px;margin-right:8px;">
-          Картка від Привата <span style="opacity:.7;font-weight:600"></br>| Відомі всім фінансові рішення</span>
-          <a href="Privat1.pdf" target="_blank" rel="noopener"
-       style="display:inline-block;margin-top:8px;color:#93c5fd;text-decoration:underline;">Презентація студентського проекту ПриватБанку (PDF)</a><br>
-          <a href="Privat2.pdf" target="_blank" rel="noopener"
-       style="display:inline-block;margin-top:8px;color:#93c5fd;text-decoration:underline;">Студентам – від Привату (PDF)</a><br>
-       ✅Оператори Приватбанку<br>
- з 05.09-11.09.2025 року<br>
-🕘9:00-17:00<br>
-Читальна зала бібліотеки КНУБА (головний корпус, 3 поверх, кім.343) <a href="https://www.google.com/maps/search/?api=1&query=50.42675679046541,30.46529884832752" target="_blank" rel="noopener">Мапа →</a><br>
+        <p style="margin-top:12px">Оформлення банківських карток для виплати стипендії відбувається <strong>у холі актової зали</strong> паралельно з програмою онбордингу та впродовж усього тижня.</p>
+        <p>Презентація умов та інструктаж — <strong>1 вересня, 11:16–11:26</strong>, актова зала (для кожного потоку окремо).</p>
+        <p style="color:#9ca3af">Банк-партнер, перелік документів та графік роботи операторів будуть оприлюднені додатково.</p>
       </div>
-      </div>
+
       <div class="service">
-        <div class="tag"><h4>Електронні сервіси</h4></div>
-        <p>Освітній сайт КНУБА LMS (Moodle) <a href="https://org2.knuba.edu.ua/">Перейти →</a></br> Office 365 / Teams, корпоративна пошта. <a href="https://www.office.com/login">Перейти →</a></p>
+        <div class="tag"><h4>Підтримка та права</h4></div>
+        <ul class="list">
+          <li><strong>Освітній омбудсмен КНУБА</strong> — Росинський Андрій. Захист прав та академічних свобод здобувачів освіти.</li>
+          <li><strong>Рада студентського самоврядування</strong> — голова Заремба Софія.</li>
+          <li><strong>Центр студентських ініціатив та ділового партнерства</strong> — начальник Сах Роман.</li>
+          <li><strong>Центр культури та дозвілля</strong> — директорка Петрікей Ірина. Творчі колективи університету.</li>
+          <li><strong>Студентське містечко</strong> — директор Коберник Вадим. Поселення, побут, безпека в гуртожитках.</li>
+          <li><strong>Бібліотека КНУБА</strong> — директорка Костеріна Інна.</li>
+        </ul>
       </div>
+
+    </div>
   </section>
+
+  <!--
+    ============================================================
+    БЛОК «ПІДСУМКИ ОНБОРДИНГУ 2025»
+    Готовий до публікації. Розкоментуйте (приберіть цей рядок і
+    відповідний рядок наприкінці блоку), коли:
+      1) підставите фактичні цифри замість XXX;
+      2) створите архівну копію торішнього сайту в папці /2025/;
+      3) завантажите фото у форматі onboarding2025-1.jpg тощо.
+    Не забудьте додати пункт меню: <li><a href="#results2025">Підсумки 2025</a></li>
+    ============================================================
+
+  <section id="results2025" class="container">
+    <div class="section-h">
+      <h2>Як це було торік</h2>
+      <p>Підсумки тижня онбордингу 2025 року.</p>
+    </div>
+    <div class="kpis" style="grid-template-columns:repeat(4,1fr)">
+      <div class="kpi"><div class="num">XXX</div><div>першокурсників долучилося</div></div>
+      <div class="kpi"><div class="num">XXX</div><div>заходів проведено</div></div>
+      <div class="kpi"><div class="num">XXX%</div><div>оцінили програму позитивно</div></div>
+      <div class="kpi"><div class="num">XXX</div><div>переглядів трансляцій</div></div>
+    </div>
+    <div class="card" style="padding:16px;margin-top:16px">
+      <p>Короткий підсумковий текст: що спрацювало найкраще, що змінено у програмі 2026 року за результатами зворотного зв'язку.</p>
+      <a class="btn" href="2025/" target="_blank" rel="noopener">Відкрити архів сайту 2025 →</a>
+    </div>
+  </section>
+
+    ============================================================
+  -->
 
   <section id="faq" class="container">
     <div class="section-h"><h2>Часті запитання</h2><p>Важливі відповіді для швидкого старту.</p></div>
+
+    <details>
+      <summary>Куди йти 31 серпня і що взяти з собою?</summary>
+      <p>Збір — з <strong>10:30</strong> на <strong>стадіоні КНУБА</strong> (резервна локація — Актова зала). Шукайте волонтерів-навігаторів і куратора своєї групи: потоки розводять по секторах за факультетами.</p>
+      <p>Візьміть документ, що посвідчує особу, заряджений телефон і воду. Урочиста частина триває приблизно годину, після 12:00 факультети приймають свої потоки для вирішення організаційних питань — документи, студентські квитки, поселення.</p>
+    </details>
+
+    <details>
+      <summary>О котрій мені приходити 1 вересня?</summary>
+      <p>1 вересня захід проводиться <strong>у два потоки з ідентичною програмою</strong>, обидва — в актовій залі:</p>
+      <p><strong>Потік 1 (10:00–11:40):</strong> Архітектурний факультет, Будівельний факультет.<br>
+         <strong>Потік 2 (13:00–14:40):</strong> ФАІТ, ФІСЕ, ГІСУТ, ФУПП, БТФ.</p>
+      <p>Приходьте лише на свій потік — програма в обох однакова.</p>
+    </details>
+
     <details>
       <summary>Як знайти свій розклад групи?</summary>
       <p>Посилання на розклад за факультетами та групами розміщено на сайті <a href="https://mkr.knuba.edu.ua/" target="_blank" rel="noopener">Розклад →</a></p>
-      <p>Натисність Розклад  → Акад.групи → Оберіть факультет → 1 курс → Групу </p>
-      <img src="mkr.png" alt="Логотип КНУБА" style="height:240px;width:auto;border-radius:8px;margin-right:8px;">
-      <p>В мобільній версії не забудьте натиснити на "СТОПОЧКУ" (...так, дуже складно)</p>
-      <img src="mkrmob.png" alt="Логотип КНУБА" style="height:480px;width:auto;border-radius:8px;margin-right:8px;">
+      <p>Натисніть Розклад → Акад. групи → оберіть факультет → 1 курс → свою групу.</p>
+      <img src="mkr.png" alt="Приклад пошуку розкладу на сайті mkr.knuba.edu.ua" style="height:240px;width:auto;border-radius:8px;margin-right:8px;">
+      <p>У мобільній версії не забудьте натиснути на «стопочку» (…так, дуже складно)</p>
+      <img src="mkrmob.png" alt="Пошук розкладу в мобільній версії" style="height:480px;width:auto;border-radius:8px;margin-right:8px;">
     </details>
+
+    <details>
+      <summary>Хто мій куратор і як дізнатися склад групи?</summary>
+      <p>Кураторів академічних груп представляють <strong>3 вересня</strong> на факультетських заходах: кожен куратор виходить, називає свою групу і залишає контакт. Одразу після цього — кураторська година у складі груп: знайомство, вибори старости, створення робочого чату групи.</p>
+    </details>
+
+    <details>
+      <summary>Як долучитися до хабу, лабораторії або творчого колективу?</summary>
+      <p><strong>2 вересня</strong> в актовій залі презентують КНУБА Hub, «Острів», PROTOLAB та ROBOLAB, а також Раду студентського самоврядування, студентську профспілку, Центр культури та дозвілля і Центр студентських ініціатив.</p>
+      <p>Одразу після презентацій, <strong>з 11:30 до 15:00</strong>, працюють відкриті двері хабів — можна прийти, подивитися і записатися на місці.</p>
+    </details>
+
     <details>
       <summary>Чи отримаю я стипендію?</summary>
-      <p>Академічна стипендія на перший семестр навчання призначається студентам першого курсу бюджетної форми навчання за рейтингом, який формується на основі вступного балу. Кількість стипендій - до 40% від контингенту.</br></br>Соціальна стипендія у 2025 році призначається студентам, які здобувають бакалаврат або магістратуру, навчаються за державним замовленням на денній або дуальній формі, не перебувають в академічній відпустці.
-</br>Претендувати на соціальну стипендію можуть:діти-сироти та діти, позбавлені батьківського піклування; особи, які втратили батьків у віці від 18 до 23 років; постраждалі від Чорнобильської катастрофи; учасники бойових дій та Революції Гідності; студенти з інвалідністю; діти захисників і захисниць України, загиблих або зниклих безвісти; студенти з населених пунктів на лінії зіткнення та ВПО; колишні полонені та їхні діти.
-</br> Як отримати соціальну стипендію? Студент повинен подати заяву на ім'я ректора, вказавши: повне ім'я; дату народження; адресу реєстрації; документ, що підтверджує право на стипендію. <a href="https://www.knuba.edu.ua/about/administrativni-pidrozdili/navchalnij-viddil/socialni-stipendiyi/" target="_blank" rel="noopener">Сайт навчального відділу →</a></p>
+      <p>Академічна стипендія на перший семестр навчання призначається студентам першого курсу бюджетної форми навчання за рейтингом, який формується на основі вступного балу. Кількість стипендій — до 40% від контингенту.</p>
+      <p>Соціальна стипендія призначається студентам, які здобувають бакалаврат або магістратуру, навчаються за державним замовленням на денній або дуальній формі та не перебувають в академічній відпустці.</p>
+      <p>Претендувати на соціальну стипендію можуть: діти-сироти та діти, позбавлені батьківського піклування; особи, які втратили батьків у віці від 18 до 23 років; постраждалі від Чорнобильської катастрофи; учасники бойових дій та Революції Гідності; студенти з інвалідністю; діти захисників і захисниць України, загиблих або зниклих безвісти; студенти з населених пунктів на лінії зіткнення та ВПО; колишні полонені та їхні діти.</p>
+      <p>Як отримати соціальну стипендію: подати заяву на ім'я ректора, вказавши повне ім'я, дату народження, адресу реєстрації та документ, що підтверджує право на стипендію. <a href="https://www.knuba.edu.ua/about/administrativni-pidrozdili/navchalnij-viddil/socialni-stipendiyi/" target="_blank" rel="noopener">Сайт навчального відділу →</a></p>
     </details>
+
     <details>
-      <summary>Чи є доступ до Wi‑Fi?</summary>
-      <p>Так, гостьова відкрита мережа функціонує практично у всіх основних локаціях університету. Мережа KNUBA_FREE_WIFI</p>
+      <summary>Чи є доступ до Wi-Fi?</summary>
+      <p>Так, гостьова відкрита мережа функціонує практично в усіх основних локаціях університету. Мережа — <strong>KNUBA_FREE_WIFI</strong>.</p>
     </details>
+
+    <details>
+      <summary>Що робити, якщо я пропустив захід або не встиг зареєструватися в сервісах?</summary>
+      <p>1 вересня з 11:40 до 13:00 у холі актової зали працюють довідкові стійки підрозділів — там допоможуть тим, хто не встиг зареєструватися в цифрових сервісах. Також завжди можна звернутися до куратора групи або до свого деканату.</p>
+    </details>
+
   </section>
 
   <section id="contacts" class="container">
@@ -309,35 +422,34 @@
           <div class="tag"><h4>Архітектурний факультет</h4></div>
           <div class="card"><div style="padding:16px">
             <h4>Брідня Лариса Юріївна</h4>
-            <p><a href="https://t.me/abit_arch" target="_blank" rel="noopener">Абітура архфаку 2025 →</a><br/><strong>Тел.:</strong> +380 (44) 241-55-86<br/><strong>Email:</strong> bridnia.liu@knuba.edu.ua</p>
+            <p><a href="https://t.me/abit_arch" target="_blank" rel="noopener">Телеграм-канал архфаку →</a><br/><strong>Тел.:</strong> +380 (44) 241-55-86<br/><strong>Email:</strong> bridnia.liu@knuba.edu.ua</p>
           </div></div>
         </div>
         <div class="faculty-section">
           <div class="tag"><h4>Будівельний факультет</h4></div>
           <div class="card"><div style="padding:16px">
             <h4>Іванченко Григорій Михайлович</h4>
-            <p><strong>Канал ТГ:</strong><a href="https://t.me/BFInform" target="_blank" rel="noopener">BFID →</a><br/><strong>Тел.:</strong> +380 (44) 248-32-37 денне відділення<br/><strong>Тел.:</strong> +380 (44) 241-55-29 заочне відділення<br/><strong>Email:</strong> ivgm61@gmail.com</p>
+            <p><strong>Канал ТГ:</strong> <a href="https://t.me/BFInform" target="_blank" rel="noopener">BFID →</a><br/><strong>Тел.:</strong> +380 (44) 248-32-37 денне відділення<br/><strong>Тел.:</strong> +380 (44) 241-55-29 заочне відділення<br/><strong>Email:</strong> ivgm61@gmail.com</p>
           </div></div>
         </div>
         <div class="faculty-section">
           <div class="tag"><h4>Факультет урбаністики та просторового планування</h4></div>
           <div class="card"><div style="padding:16px">
             <h4>Мамедов Алірза</h4>
-            <p><strong>Канал ТГ:</strong> <a href="https://t.me/+4hPyFzbbDv1lMDhi" target="_blank" rel="noopener">Вступ ФУПП бакалавр →</a><br/><strong>Тел.:</strong> +380 (44) 248-30-32<br/><strong>Email:</strong> fupp@knuba.edu.ua</p>
+            <p><strong>Канал ТГ:</strong> <a href="https://t.me/+4hPyFzbbDv1lMDhi" target="_blank" rel="noopener">Вступ ФУПП →</a><br/><strong>Тел.:</strong> +380 (44) 248-30-32<br/><strong>Email:</strong> fupp@knuba.edu.ua</p>
           </div></div>
         </div>
         <div class="faculty-section">
           <div class="tag"><h4>Факультет інженерних систем та екології</h4></div>
           <div class="card"><div style="padding:16px">
             <h4>Чепурна Наталія Володимирівна</h4>
-            <p><strong>Канал ТГ:</strong> <a href="https://t.me/fise_inform" target="_blank" rel="noopener">ФІСЕ Інформаційний центр →</a><br/><strong>Тел.:</strong> +380 (44) 245-48-44<br/><strong>моб.тел.:</strong> +380 (50) 548-04-16<br/><strong>Email:</strong> Chepurnayanv@ukr.net</p>
+            <p><strong>Канал ТГ:</strong> <a href="https://t.me/fise_inform" target="_blank" rel="noopener">ФІСЕ Інформаційний центр →</a><br/><strong>Тел.:</strong> +380 (44) 245-48-44<br/><strong>Моб. тел.:</strong> +380 (50) 548-04-16<br/><strong>Email:</strong> Chepurnayanv@ukr.net</p>
           </div></div>
         </div>
         <div class="faculty-section">
           <div class="tag"><h4>Будівельно-технологічний факультет</h4></div>
           <div class="card"><div style="padding:16px">
             <h4>Гоц Володимир Іванович</h4>
-            <p><strong>Канал ТГ:</strong> <a href="https://t.me/abitBTF" target="_blank" rel="noopener">БТФ.Чат абітури →</a><br/>
             <p><strong>Канал ТГ:</strong> <a href="https://t.me/knuba1930btf" target="_blank" rel="noopener">Будівельно-технологічний факультет КНУБА →</a><br/><strong>Тел.:</strong> +380 (44) 248-30-16<br/><strong>Email:</strong> Gots_vi@knuba.edu.ua</p>
           </div></div>
         </div>
@@ -345,14 +457,30 @@
           <div class="tag"><h4>Факультет автоматизації та інформаційних технологій</h4></div>
           <div class="card"><div style="padding:16px">
             <h4>Терентьєв Олександр Олександрович</h4>
-            <p><strong>ТГ usrname:</strong> @SYevheniia<br/><strong>Тел.:</strong> +380 (44)  248-30-74 <br/><strong>Email:</strong> fait@knuba.edu.ua</p>
+            <p><strong>Тел.:</strong> +380 (44) 248-30-74<br/><strong>Email:</strong> fait@knuba.edu.ua</p>
           </div></div>
         </div>
         <div class="faculty-section">
           <div class="tag"><h4>Факультет геоінформаційних систем та управління територіями</h4></div>
           <div class="card"><div style="padding:16px">
             <h4>Бондар Світлана Андріївна</h4>
-            <p><strong>Канал ТГ:</strong> <a href="https://t.me/+Hces_el3dCthOGEy" target="_blank" rel="noopener">Потік ГтЗ-25 →</a><br/><strong>Тел.:</strong> +380 (44) 241-55-69<br/><strong>Email:</strong> bondar.sa@knuba.edu.ua</p>
+            <!-- TODO 2026: торішній ТГ-канал «Потік ГтЗ-25» видалено як застарілий. Додайте посилання на канал набору 2026. -->
+            <p><strong>Тел.:</strong> +380 (44) 241-55-69<br/><strong>Email:</strong> bondar.sa@knuba.edu.ua</p>
+          </div></div>
+        </div>
+        <!-- TODO 2026: підставити телефони, email та телеграм-канали ІІНО й Індустріального коледжу -->
+        <div class="faculty-section">
+          <div class="tag"><h4>Інститут інноваційної освіти КНУБА</h4></div>
+          <div class="card"><div style="padding:16px">
+            <h4>Самойлов Олександр — директор</h4>
+            <p><strong>Тел.:</strong> уточнюється<br/><strong>Email:</strong> уточнюється</p>
+          </div></div>
+        </div>
+        <div class="faculty-section">
+          <div class="tag"><h4>Індустріальний коледж КНУБА</h4></div>
+          <div class="card"><div style="padding:16px">
+            <h4>Демченко Валерій — директор</h4>
+            <p><strong>Тел.:</strong> уточнюється<br/><strong>Email:</strong> уточнюється</p>
           </div></div>
         </div>
     </div>
@@ -371,12 +499,10 @@
         </a>
     </div>
     <div class="foot">
-      <small>© 2025 КНУБА · Тиждень орієнтації першокурсників</small>
+      <small>© 2026 КНУБА · Урочисте привітання першокурсників та тиждень онбордингу</small>
       <a class="btn" href="#top" aria-label="Повернутися нагору">Нагору ↑</a>
     </div>
   </footer>
-
-    
 
   <script>
     // Mobile menu toggle
@@ -385,36 +511,83 @@
       nav.classList.toggle('open');
     });
 
-    // Tabs logic & sample data
+    /* ============================================================
+       ПРОГРАМА ЗАХОДІВ 2026
+       Ключі 1–4 = вкладки днів (31.08, 01.09, 02.09, 03.09).
+       Поля події: time, title, place, type, details (необов'язкове).
+       Допустимі type: info, sport, social, acad, safety.
+       Джерело: розпорядження та Додаток 1 (програма 2026).
+       ============================================================ */
     const schedule = {
+      // ---------- 31 серпня, понеділок — День першокурсника ----------
       1:[
-        {time:'10:00', title:'Вітання першокурсників та знайомство зі спільнотою КНУБА', place:'Стадіон', type:'social'},
-        {time:'11:30', title:'Зустріч з деканами, кураторами та нетворкінг на факультетах', place:'Архітектурний факультет - Актова зала, Будівельний факультет - Читальна зала головного корпусу, Факультет автоматизації та інформаційних технологій - а.102, Факультет урбаністики та просторового планування - а.323, Факультет геоінформаційних систем та управління територіями - а.348, факультет інженерних систем та екології - а.150, Будівельно-технологічний факультет - а.274', type:'info'}
-       ],
+        {time:'10:30', title:'Збір учасників за групами', place:'Стадіон КНУБА (резервна локація — Актова зала). Розведення потоків по секторах, реєстрація номінантів. Шукайте свого куратора та волонтерів-навігаторів.', type:'social'},
+        {time:'10:55', title:'Безпековий брифінг', place:'Де розташовані укриття та за ким рухатися у разі повітряної тривоги.', type:'safety'},
+        {time:'11:00', title:'Урочисте привітання першокурсників', place:'Стадіон КНУБА', type:'social', details:[
+          'Державний Гімн України',
+          'Хвилина мовчання за загиблими студентами, викладачами та випускниками КНУБА',
+          'Вітальне слово ректора Олексія Дніпрова',
+          'Вітання почесного гостя',
+          'Слово голови Ради студентського самоврядування',
+          'Вручення нагород першокурсникам — загальноуніверситетські номінації',
+          'Творчий номер Центру культури та дозвілля',
+          'Вручення нагород — номінації факультетів, ІІНО та Індустріального коледжу',
+          'Слово першокурсника та слово випускника'
+        ]},
+        {time:'11:41', title:'Анонс тижня онбордингу та маршрутизація на 1–3 вересня', place:'Проректор з навчально-методичної роботи', type:'info'},
+        {time:'11:48', title:'Спільне фотографування за факультетами', place:'Потоково, за графіком', type:'social'},
+        {time:'12:00', title:'Факультети приймають свої потоки', place:'Факультетські локації, ІІНО, Індустріальний коледж. Організаційні питання, документи, студентські квитки, поселення.', type:'info'}
+      ],
+
+      // ---------- 1 вересня, вівторок — Сервіси та інфраструктура ----------
       2:[
-        {time:'15:00', title:'Презентація студентського спорту. Який вид спорту вам підходить та як до нього долучитися у КНУБА?', place:'Стадіон', type:'sport'}
-        ],
+        {time:'10:00', title:'Потік 1 — Сервіси та можливості КНУБА', place:'<strong>Актова зала.</strong> Архітектурний та Будівельний факультети. Тривалість — 1 год 40 хв.', type:'info', details:[
+          '10:00–10:05 — Відкриття, безпековий брифінг, регламент дня',
+          '10:05–10:20 — Цифрові сервіси: особистий кабінет, «Цифровий університет», Moodle, Microsoft Teams, Office 365, корпоративна пошта, Wi-Fi, інтернет у гуртожитках, технічна підтримка',
+          '10:20–10:30 — Бібліотечні можливості: фонди, електронні ресурси, читальні зали, наукометричні бази',
+          '10:30–10:42 — Наукові можливості: наукове товариство студентів, гуртки, конференції, публікації, гранти',
+          '10:42–10:52 — Перерва. У холі працюють стійки банку-партнера та довідкові стійки підрозділів',
+          '10:52–11:04 — Спортивні можливості: секції, збірні команди, спортивні споруди',
+          '11:04–11:16 — Студмістечко: поселення, правила проживання, побут, безпека. Програма «Сімейний лікар у КНУБА»',
+          '11:16–11:26 — Оформлення банківських карток для виплати стипендій: документи, строки, куди подати реквізити',
+          '11:26–11:36 — Запитання та відповіді (питання збираються через QR упродовж заходу)',
+          '11:36–11:40 — Підсумки, анонс 2 вересня, маршрутизація'
+        ]},
+        {time:'11:40', title:'Оформлення банківських карток, довідкові стійки', place:'Хол актової зали. Робота з тими, хто не встиг зареєструватися в цифрових сервісах. До 13:00, потоково.', type:'info'},
+        {time:'13:00', title:'Потік 2 — Сервіси та можливості КНУБА', place:'<strong>Актова зала.</strong> ФАІТ, ФІСЕ, ГІСУТ, ФУПП, БТФ. Програма ідентична потоку 1, тривалість — 1 год 40 хв (до 14:40).', type:'info'}
+      ],
+
+      // ---------- 2 вересня, середа — Спільнота, лабораторії та хаби ----------
       3:[
-        {time:'15:00', title:'Презентація карток Sense Bank. Презентація сервісів КНУБА для студентів. Як користуватися електронними та офлайновими сервісами КНУБА?', place:'<strong>Актова зала з онлайн трансляцією</strong> <a href=https://youtube.com/live/tHRpjqYOCVM?feature=share>Доєднатися</a>', type:'info'}
-        ],
+        {time:'10:00', title:'Студентське самоврядування, лабораторії та хаби', place:'<strong>Актова зала.</strong> До 11:30.', type:'social', details:[
+          '10:00–10:05 — Відкриття, безпековий брифінг',
+          '10:05–10:25 — Рада студентського самоврядування КНУБА: структура, повноваження, як увійти до складу, як звернутися',
+          '10:25–10:35 — Студентська профспілка: можливості та переваги',
+          '10:35–10:45 — Центр культури та дозвілля: творчі колективи, як долучитися',
+          '10:45–10:55 — Центр студентських ініціатив та ділового партнерства: проєкти, волонтерство, партнерства',
+          '10:55–11:15 — Презентація лабораторій і хабів: КНУБА Hub, «Острів», PROTOLAB, ROBOLAB',
+          '11:15–11:30 — Функції освітнього омбудсмена'
+        ]},
+        {time:'11:30', title:'Відкриті двері хабів та лабораторій', place:'Локації хабів. До 15:00. Можна прийти, подивитися і записатися на місці.', type:'social'}
+      ],
+
+      // ---------- 3 вересня, четвер — Освітні програми та куратори ----------
       4:[
-    {time:'9:00', title:'Початок оформлення карток Sense Bank (04.09-12.09\n🕒 9:00-17:00)', place:'Зимовий сад головного корпусу (1 поверх)', type:'info'},
-    {time:'15:00', title:'Презентація карток ПриватБанку. Презентація траєкторій саморозвитку студентів. Як прийняти участь у творчій, науковій та громадській діяльності студентів КНУБА', place:'<strong>Актова зала з онлайн трансляцією</strong> <a href=https://youtube.com/live/yFOnaXpsk9U?feature=share>Доєднатися</a>', type:'info'}
-        ],
-      5:[
-    {time:'9:00', title:'Початок оформлення карток ПриватБанку (05.09-11.09\n🕘9:00-17:00)', place:'Читальна зала бібліотеки КНУБА (головний корпус, 3 поверх, кім.343 )', type:'info'},
-    {time:'--:--', title:'Немає подій окрім навчання', place:'за розкладом', type:'social'}
-      ],
-      6:[
-        {time:'--:--', title:'Немає подій окрім навчання', place:'за розкладом', type:'social'}
-      ],
-      7:[
-        {time:'--:--', title:'Немає подій навіть навчання', place:'чіл', type:'social'}
+        {time:'10:00', title:'Факультетський день: освітні програми та куратори груп', place:'<strong>За локаціями підрозділів</strong> (див. нижче). До 13:00.', type:'acad', details:[
+          '10:00–10:20 — Вітальне слово декана. Факультет: структура, кафедри, історія, випускники, партнери',
+          '10:20–11:20 — Презентація освітніх програм гарантами: структура, компетентності, практика, працевлаштування',
+          '11:20–11:35 — Перерва',
+          '11:35–11:50 — Вибіркові дисципліни: коли й як обирати, де дивитися каталог, строки подання заяв',
+          '11:50–12:00 — Академічна доброчесність: що є порушенням, наслідки, прийнятне використання ШІ-інструментів',
+          '12:00–12:20 — Представлення кураторів академічних груп',
+          '12:20–13:00 — Розподіл за групами. Кураторська година: знайомство, склад групи, вибори старости, чат групи'
+        ]},
+        {time:'Локації', title:'Де збирається ваш підрозділ', place:'Архітектурний факультет — Актова зала · Будівельний факультет — Читальна зала головного корпусу · ФАІТ — а. 102 · ФУПП — а. 323 · ГІСУТ — а. 348 · ФІСЕ — а. 150 · БТФ — а. 274 · ІІНО КНУБА та Індустріальний коледж — за оголошенням підрозділу', type:'acad'}
       ]
     };
 
     function pillClass(t){
-      return {info:'pill info', sport:'pill sport', social:'pill social', acad:'pill acad'}[t]||'pill';
+      return {info:'pill info', sport:'pill sport', social:'pill social', acad:'pill acad', safety:'pill safety'}[t]||'pill';
     }
 
     const slotsWrap = document.getElementById('slotsWrap');
@@ -426,9 +599,10 @@
           <div>
             <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:space-between">
               <strong>${i.title}</strong>
-              <span class="${pillClass(i.type)}">${({info:'Інфо',sport:'Спорт',social:'Нетворкінг',acad:'Академ.'}[i.type]||'Подія')}</span>
+              <span class="${pillClass(i.type)}">${({info:'Інфо',sport:'Спорт',social:'Спільнота',acad:'Академ.',safety:'Безпека'}[i.type]||'Подія')}</span>
             </div>
             <div style="color:#9ca3af">${i.place}</div>
+            ${i.details ? `<ul class="mini">${i.details.map(d=>`<li>${d}</li>`).join('')}</ul>` : ''}
           </div>
         </div>`).join('');
     }
@@ -438,13 +612,14 @@
     document.getElementById('dayTabs').addEventListener('click', (e)=>{
       const btn = e.target.closest('.tab');
       if(!btn) return;
-      document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false');});
       btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
       render(btn.dataset.day);
     });
 
     // Active link on scroll
-    const links = [...document.querySelectorAll('.nav a')];
+    const links = [...document.querySelectorAll('.nav a[href^="#"]')];
     const sections = links.map(l=>document.querySelector(l.getAttribute('href'))).filter(Boolean);
     const obs = new IntersectionObserver((entries)=>{
       entries.forEach((e)=>{
